@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color 00</title>
+        <script>
+            document.addEventListener('DOMContentLoaded',function()
+            {
+                //  Change font color to red
+                document.querySelector('#bt_set_red').onclick=function()
+                {
+                    document.querySelector('#text_hello').style.color='red';
+                };
+
+                //  Change font color to blue
+                document.querySelector('#bt_set_blue').onclick=function()
+                {
+                    document.querySelector('#text_hello').style.color='blue';
+                };
+
+                //  Change font color to green
+                document.querySelector('#bt_set_green').onclick=function()
+                {
+                    document.querySelector('#text_hello').style.color='green';
+                };
+            });
+        </script> 
+    </head>
+    <body>
+        <h1 id="text_hello">Hello</h1>
+        <button id="bt_set_red">Red</button>
+        <button id="bt_set_green">Green</button>
+        <button id="bt_set_blue">Blue</button>
+
+    p
+    </body>
+</html>
