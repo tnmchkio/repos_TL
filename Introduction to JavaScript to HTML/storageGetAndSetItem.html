@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  Set starting value of counter to 0
+        if(!localStorage.getItem('counter'))
+        {
+            localStorage.setItem('counter',11);
+        }
+//        document.querySelector('#txt_counter').innerHTML=localStorage.getItem('counter');
+        //  Load current value of counter
+        function delete_item()
+        {
+            delete localStorage.counter;
+        }
+        document.addEventListener('DOMContentLoaded',function()
+        {
+            document.querySelector('#txt_counter').innerHTML=localStorage.getItem('counter');
+            //  Count every time buttom is cliked
+            document.querySelector('button').onclick=()=>
+            {
+                let counter=localStorage.getItem('counter');
+                counter++;
+                document.querySelector('#txt_counter').innerHTML=counter;
+                localStorage.setItem('counter',counter);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1 id="txt_counter">{{localStorage.getItem('counter')}}</h1>
+    <button>Click Here and Add One</button>
+    <button onclick="delete_item()">Click to Delete</button>
+</body>
+</html>

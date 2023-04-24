@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>
+        {
+            document.querySelectorAll('.color-change').forEach(button=>
+            {
+                button.onclick=()=>
+                {
+                    document.querySelector('#txt_h2').style.color=button.dataset.color;
+                };
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="txt_h2">Text</h1>
+    <button class="color-change" data-color="red">change to RED</button>
+    <button class="color-change" data-color="blue">change to BLUE</button> <button class="color-change" data-color="green">change to Green</button>
+</body>
+</html>

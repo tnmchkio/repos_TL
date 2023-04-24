@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>
+        {
+            //  Change the color of heading when dropdown changes
+            document.querySelector('#change-color').onchange=function()
+            {
+                document.querySelector('#txt_field').style.color=this.value;
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1 id="txt_field">Hello in H1 tag</h1>
+    <select id="change-color">
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green" selected>Green</option>
+        <!-- Attribute selectd define the option as the default value-->
+        <option value="blue">Blue</option>
+    </select>
+</body>
+</html>

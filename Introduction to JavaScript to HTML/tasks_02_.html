@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  by default, submit button is disabled
+        document.addEventListener('DOMContentLoaded',()=>
+        {
+            //  By default, submit button is disabled
+            document.querySelector('#task').onkeyup=()=>
+            {
+                let txt_input=document.querySelector('#task').value;
+                document.querySelector('#submit').disabled=true;
+                txt_input=txt_input.replace(/ /g,'');
+                if(txt_input.length>0)
+                {
+                    document.querySelector('#submit').disabled=false;
+                }
+            }
+            document.querySelector('#form_tasks').onsubmit=()=>
+            {
+                //  Create new item for lists of tasks in ul tag
+                const li=document.createElement('li');
+                li.innerHTML=document.querySelector('#task').value;
+                //  Add new item to task list
+                document.querySelector('#ul-tasks').append(li);
+                //  Clear input field and disabled submit again
+                document.querySelector('#task').value='';
+                document.querySelector('#submit').disable=true;
+
+                //  Stop form form submitting
+                return false;
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Taks</h1>
+    <ul id="ul-tasks"></ul>
+    <form id="form_tasks">
+        <input type="text" placeholder="new Task" autofocus autocomplete="off" id="task">
+        <input id="submit" type="submit" >
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', () => {
+                setInterval(count, 2000);
+                setInterval(count_02, 1000);
+            });
+
+            let counter = 0;
+            let counter_02 = 0;
+
+            function count() {
+                counter++;
+                document.querySelector('#counter_01').innerHTML = counter;
+            }
+            function count_02() {
+                counter_02++;
+                document.querySelector('#counter_02').innerHTML = counter_02;
+            }
+
+        </script>
+        <title>My Website</title>
+    </head>
+    <body>
+        <h1 id="counter_01">0</h1>
+        <h1 id="counter_02">0</h1>
+    </body>
+</html>
